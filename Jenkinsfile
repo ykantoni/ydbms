@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                dir(path: '/c:/Users/irenok/.jenkins/workspace/ydbms_master/') {
-                    sh 'mvn --version'
-                }
+                sh 'mvn --version'
             }
         }
     }
