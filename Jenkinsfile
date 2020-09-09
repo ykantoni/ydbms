@@ -14,13 +14,14 @@ pipeline {
             }
         }
         stage('deploy') {
+            agent any
             steps {
                 retry(3) {
                     sh 'ls -lha'
                 }
 
                 timeout(time: 1, unit: 'MINUTES') {
-                    sh 'pwd'
+                    sh 'echo hello deploy'
                 }
             }
         }        
