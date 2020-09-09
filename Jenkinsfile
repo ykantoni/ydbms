@@ -8,7 +8,7 @@ pipeline {
             }
         }
         stage('test') {
-            agent none
+            agent any
             steps {
                 sh 'echo hello test'
             }
