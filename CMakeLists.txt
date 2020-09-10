@@ -33,14 +33,15 @@ configure_file(${CMAKE_SOURCE_DIR}/config/ydbmscfg.h.in ydbmscfg.h)
 
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
-target_include_directories(ydbms PUBLIC "${PROJECT_BINARY_DIR}" )
+target_include_directories(ydbms PUBLIC 
+${CMAKE_SOURCE_DIR}/include
+${EXTRA_INCLUDES}
+"${PROJECT_BINARY_DIR}" )
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 install(TARGETS ydbms DESTINATION bin)
-install(FILES "${PROJECT_BINARY_DIR}/ydbmscfg.h"
-  DESTINATION include
-  )
+install(FILES "${PROJECT_BINARY_DIR}/ydbmscfg.h" DESTINATION include)
 
 	

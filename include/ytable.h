@@ -3,9 +3,9 @@
 #include <vector>
 
 #ifdef USE_YMEMORY
-	#include "ymemory.h"
+	#include "memory\ymemory.h"
 #else
-	#include "YTableOnDisk.h"
+	#include "ytableondisk.h"
 #endif
 #include "yerrorlog.h"
 #include "catch.hpp"
