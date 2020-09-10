@@ -5,13 +5,26 @@ pipeline {
             agent { docker { image 'maven:3.3.3' } }
             steps {
                 sh 'mvn --version'
+                sh 'pwd'
             }
         }
         stage('test') {
-            agent none
+            agent any
             steps {
                 sh 'echo hello test'
             }
         }
+        stage('deploy') {
+            agent any
+            steps {
+                retry(3) {
+                    sh 'ls -lha'
+                }
+
+                timeout(time: 1, unit: 'MINUTES') {
+                    sh 'echo hello deploy'
+                }
+            }
+        }        
     }
 }
