@@ -3,7 +3,7 @@
 #include <vector>
 
 #ifdef USE_YMEMORY
-	#include "memory\ymemory.h"
+	#include "ymemory.h"
 #else
 	#include "ytableondisk.h"
 #endif
