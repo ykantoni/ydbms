@@ -2,9 +2,10 @@ pipeline {
     agent none
     stages {
         stage('build') {
-            agent { docker { image 'maven:3.3.3' } }
+#            agent { docker { image 'maven:3.3.3' } }
+            agent any
             steps {
-                sh 'mvn --version'
+#                sh 'mvn --version'
                 sh 'pwd'
                 sh 'if [ ! -d build ]; then mkdir build; else rm -f build/*; fi'
                 sh 'cd build && cmake ..'
