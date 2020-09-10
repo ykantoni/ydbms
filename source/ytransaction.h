@@ -8,7 +8,7 @@
 #include <windows.h>
 #endif
 
-#include "YTranLog.h"
+#include "ytranlog.h"
 
 class YTransaction
 {

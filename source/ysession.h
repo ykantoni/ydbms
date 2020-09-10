@@ -3,9 +3,9 @@
 #include <vector>
 #include <stdlib.h>
 #include <stdio.h>
-#include "YQueue.h"
-#include "YTransaction.h"
-#include "YCmd.h"
+#include "yqueue.h"
+#include "ytransaction.h"
+#include "ycmd.h"
 
 class YSession
 {

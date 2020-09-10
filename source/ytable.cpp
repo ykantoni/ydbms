@@ -1,3 +1,3 @@
-#include "YTable.h"
+#include "ytable.h"
 
 YErrorLog* YTable::elog = YErrorLog::instance();
