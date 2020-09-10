@@ -28,14 +28,12 @@ if(USE_YMEMORY)
 endif()
 
 target_link_libraries(ydbms PUBLIC ${EXTRA_LIBS})
-
+set_property(TARGET ydbms PROPERTY CXX_STANDARD 11)
 configure_file(${CMAKE_SOURCE_DIR}/config/ydbmscfg.h.in ydbmscfg.h)
 
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
-target_include_directories(ydbms PUBLIC
-                          "${PROJECT_BINARY_DIR}"
-                          )
+target_include_directories(ydbms PUBLIC "${PROJECT_BINARY_DIR}" )
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
