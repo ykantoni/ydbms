@@ -1,4 +1,8 @@
-cmake_minimum_required(VERSION 3.14)
+if(WIN32)
+        cmake_minimum_required(VERSION 3.14)
+else()
+        cmake_minimum_required(VERSION 3.11)
+endif()
 
 # set the project name
 project(ydbms VERSION 0.1)
