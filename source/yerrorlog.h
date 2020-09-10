@@ -22,7 +22,7 @@ public:
     YErrorLog( const char* n )
     {
         lname = n;
-        errno_t e = fopen_s( &f, n, "w+" );
+        int e = fopen_s( &f, n, "w+" );
     }
 
     static YErrorLog* instance()
