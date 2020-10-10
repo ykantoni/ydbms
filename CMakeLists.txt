@@ -21,10 +21,16 @@ ${CMAKE_SOURCE_DIR}/source/ytranlog.cpp
 ${CMAKE_SOURCE_DIR}/source/ytransaction.cpp)
 
 option(USE_YMEMORY "Use in-memory tables" ON)
+option(USE_YCOLUMNAR "Use columnar tables" ON)
 
 if(USE_YMEMORY)
   add_subdirectory(memory)
   list(APPEND EXTRA_LIBS ymemory)
+endif()
+
+if(USE_YCOLUMNAR)
+  add_subdirectory(columnar)
+  list(APPEND EXTRA_LIBS ycolumnar)
 endif()
 
 target_link_libraries(ydbms PUBLIC ${EXTRA_LIBS})
