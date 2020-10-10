@@ -8,14 +8,18 @@
 	#include "ytableondisk.h"
 #endif
 #include "yerrorlog.h"
-#include "catch.hpp"
 
 //class YTableOnDisk;
 
 class YTable
 {
 public:
-    int create( const char *tname, std::vector< std::string > cdefs )
+
+    YTable::YTable()
+    {
+    }
+
+    int create( const char *tname, std::vector< std::string >& cdefs )
     {
         return 0;
     }

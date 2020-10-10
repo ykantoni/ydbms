@@ -5,6 +5,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#ifdef ERROR
+#undef ERROR
+#endif
+
 class YErrorLog
 {
 public:

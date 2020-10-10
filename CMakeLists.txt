@@ -9,16 +9,16 @@ project(ydbms VERSION 0.1)
 
 # add the executable
 add_executable(ydbms 
-	${CMAKE_SOURCE_DIR}/source/ymain.cpp
-	${CMAKE_SOURCE_DIR}/source/ycmd.cpp
-	${CMAKE_SOURCE_DIR}/source/yerrorlog.cpp
-	${CMAKE_SOURCE_DIR}/source/yqueue.cpp
-	${CMAKE_SOURCE_DIR}/source/yredolog.cpp
-	${CMAKE_SOURCE_DIR}/source/ysession.cpp
-	${CMAKE_SOURCE_DIR}/source/ytable.cpp
-	${CMAKE_SOURCE_DIR}/source/ytableondisk.cpp
-	${CMAKE_SOURCE_DIR}/source/ytranlog.cpp
-	${CMAKE_SOURCE_DIR}/source/ytransaction.cpp)
+${CMAKE_SOURCE_DIR}/source/ymain.cpp
+${CMAKE_SOURCE_DIR}/source/ycmd.cpp
+${CMAKE_SOURCE_DIR}/source/yerrorlog.cpp
+${CMAKE_SOURCE_DIR}/source/yqueue.cpp
+${CMAKE_SOURCE_DIR}/source/yredolog.cpp
+${CMAKE_SOURCE_DIR}/source/ysession.cpp
+${CMAKE_SOURCE_DIR}/source/ytable.cpp
+${CMAKE_SOURCE_DIR}/source/ytableondisk.cpp
+${CMAKE_SOURCE_DIR}/source/ytranlog.cpp
+${CMAKE_SOURCE_DIR}/source/ytransaction.cpp)
 
 option(USE_YMEMORY "Use in-memory tables" ON)
 

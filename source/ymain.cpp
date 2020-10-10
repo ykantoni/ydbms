@@ -1,6 +1,7 @@
 //#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #define CATCH_CONFIG_RUNNER
-#include "catch.hpp"
+#include "mtest/catch.hpp"
+#include "ytable.h"
 #include "ydbmscfg.h"
 
 unsigned int Factorial( unsigned int number ) {
@@ -16,6 +17,10 @@ TEST_CASE( "Factorials are computed", "[factorial]" ) {
 
 int main( int argc, char* argv[] )
 {
+    std::vector< std::string > cdefs;
+    YTable* t = new YTable();
+    t->create( "trainee", cdefs );
+
     Catch::Session session; // There must be exactly one instance
 
     int height = 0; // Some user variable you want to be able to set
