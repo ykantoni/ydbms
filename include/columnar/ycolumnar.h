@@ -2,14 +2,6 @@
 #include <string>
 #include <vector>
 
-#ifdef USE_YMEMORY
-	#include "ymemory.h"
-#else
-	#include "ytableondisk.h"
-#endif
-#include "yerrorlog.h"
-#include "catch.hpp"
-
 class YTableColumnar
 {
 public:
@@ -20,13 +12,9 @@ public:
 
     int open( const char* tname )
     {
-#ifdef USE_YMEMORY
-	tod = new YTableInMemory( tname );
-#else
-        tod = new YTableOnDisk( tname );
-#endif
-        int e = tod->open();
-        LOG_DEBUG3( std::string( "Opened table" ) + tname );
+        int e = 0;
+        //int e = tod->open();
+        //LOG_DEBUG3( std::string( "Opened table" ) + tname );
         return e;
     }
 
@@ -55,12 +43,6 @@ public:
 
 private:
 
-#ifdef USE_YMEMORY
-    YTableInMemory *tod;
-#else
-    YTableOnDisk *tod;
-#endif
-    static YErrorLog* elog;
 };
 
 
