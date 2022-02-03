@@ -7,7 +7,7 @@ pipeline {
             steps {
 //                sh 'mvn --version'
                 sh 'pwd'
-                sh '[ -d build ] &&  rm -rf build/*'
+                sh 'if [ -d build ]; then rm -rf build/*; fi'
                 sh 'if [ ! -d build ]; then mkdir build; fi'
 //                sh 'if [ ! -d build ]; then mkdir build; else rm -f build/*; fi'
                 sh 'cd build && cmake ..'
